@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mockcraft"
+version = "1.0.0"
+description = "🎭 YAML-driven structured test data factory — zero-dependency Python CLI"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "gitstq", email = "gitstq@users.noreply.github.com"}
+]
+keywords = [
+    "mock", "test-data", "fake-data", "data-generator",
+    "yaml", "cli", "testing", "fixture", "factory"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "black>=23.0", "mypy>=1.0"]
+all = ["pytest>=7.0", "pytest-cov>=4.0", "black>=23.0", "mypy>=1.0"]
+
+[project.scripts]
+mockcraft = "mockcraft.cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/mockcraft"
+Documentation = "https://github.com/gitstq/mockcraft#readme"
+Repository = "https://github.com/gitstq/mockcraft"
+Issues = "https://github.com/gitstq/mockcraft/issues"
+Changelog = "https://github.com/gitstq/mockcraft/releases"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mockcraft*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
