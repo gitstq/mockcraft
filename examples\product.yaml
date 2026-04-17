@@ -1,0 +1,36 @@
+# MockCraft Product Schema Example
+fields:
+  product_id:
+    type: uuid
+  product_name:
+    type: sentence
+  category:
+    type: choice
+    choices: [电子产品, 服装, 食品, 图书, 家居, 美妆, 运动, 玩具]
+  price:
+    type: float
+    min: 0.01
+    max: 9999.99
+    decimals: 2
+  stock:
+    type: int
+    min: 0
+    max: 10000
+  rating:
+    type: float
+    min: 1.0
+    max: 5.0
+    decimals: 1
+  is_published:
+    type: bool
+  created_at:
+    type: datetime
+    format: "%Y-%m-%d"
+    offset_days: -30
+  updated_at:
+    type: datetime
+    format: "%Y-%m-%dT%H:%M:%SZ"
+  url:
+    type: url
+  description:
+    type: paragraph
