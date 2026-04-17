@@ -1,0 +1,34 @@
+# MockCraft Transaction/Order Schema Example
+fields:
+  order_id:
+    type: int
+    min: 100000
+    max: 999999
+  user_id:
+    type: int
+    min: 10000
+    max: 99999
+  amount:
+    type: float
+    min: 1.00
+    max: 99999.00
+    decimals: 2
+  status:
+    type: choice
+    choices: [pending, paid, shipped, completed, cancelled, refunded]
+  payment_method:
+    type: choice
+    choices: [wechat, alipay, credit_card, bank_transfer]
+  shipping_address:
+    type: address
+  created_at:
+    type: datetime
+    format: "%Y-%m-%d %H:%M:%S"
+  ip_address:
+    type: ipv4
+  user_agent:
+    type: user_agent
+  is_vip:
+    type: bool
+  notes:
+    type: sentence
