@@ -1,5 +1,7 @@
 # MockCraft
 
+**[English](README.md)** | **[简体中文](README_zh-CN.md)** | **[繁體中文](README_zh-TW.md)** | **[日本語](README_ja.md)** | **[한국어](README_ko.md)**
+
 <p align="center">
   <strong>YAML-driven structured test data factory</strong><br>
   Zero-dependency Python CLI — define your schema in YAML, get realistic data in seconds
