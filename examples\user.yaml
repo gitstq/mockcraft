@@ -1,0 +1,34 @@
+# MockCraft User Schema Example
+fields:
+  user_id:
+    type: int
+    min: 10000
+    max: 99999
+  username:
+    type: person
+  gender:
+    type: choice
+    choices: [male, female, other]
+  email:
+    type: email
+  phone:
+    type: phone
+  age:
+    type: int
+    min: 18
+    max: 80
+  city:
+    type: choice
+    choices: [北京, 上海, 深圳, 广州, 杭州, 成都, 武汉, 西安, 南京, 重庆]
+  registered_at:
+    type: datetime
+    format: "%Y-%m-%d %H:%M:%S"
+  is_active:
+    type: bool
+  bio:
+    type: sentence
+  balance:
+    type: float
+    min: 0
+    max: 50000
+    decimals: 2
